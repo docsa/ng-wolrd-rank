@@ -18,24 +18,24 @@ export class CountryDetailComponent implements OnInit {
     private countryService: CountriesService
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     const countryCode = this.route.snapshot.paramMap.get('code');
-    //building borders array
-    this.borders= [];
+    // building borders array
+    this.borders = [];
     this.countryService.getCountry(countryCode).then((data: any) => {
       this.country = data;
-      for(const border of this.country["borders"]) {
-        this.countryService.getCountry(border).then((country:any) => {
-            this.borders.push(country)
+      for (const border of this.country.borders) {
+        this.countryService.getCountry(border).then((country: any) => {
+            this.borders.push(country);
         });
       }
     });
   }
 
-  // map is not possible inline in html
-  displayArray(arr, value) {
-    if(arr) {
-      const res =  arr.map((item) => item[value]).join(", ");
+  // map is not possible inline in html : maos an array to whote-separated string
+  displayArray(arr, value): string {
+    if (arr) {
+      const res =  arr.map((item: string[]) => item[value]).join(', ');
       return res;
     }
   }

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
-import { CountriesListComponent } from './countries-list/countries-list.component'
+import { CountriesListComponent } from './countries-list/countries-list.component';
 
 const routes: Routes = [
     { path: '', redirectTo: '/list', pathMatch: 'full' },

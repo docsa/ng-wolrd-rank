@@ -10,11 +10,13 @@ export class CountriesService {
 
   constructor(private http: HttpClient) { }
 
-  async getCountries() {
+  // tslint:disable-next-line: ban-types
+  async getCountries(): Promise<Object> {
      return this.http.get(`${API_URL}/all`).toPromise();
   }
 
-  async getCountry(code: string) {
+  // tslint:disable-next-line: ban-types
+  async getCountry(code: string): Promise<Object> {
     return this.http.get(`${API_URL}/alpha/${code}`).toPromise();
   }
 }

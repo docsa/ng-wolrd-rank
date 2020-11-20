@@ -12,8 +12,8 @@ export class SearchInputComponent  {
   @Output()
   filter: EventEmitter<string> = new EventEmitter<string>();
 
-  filterList($event) {
-    this.filter.emit($event.target.value)
+  filterList($event): void {
+    this.filter.emit($event.target.value);
   }
 
 }
