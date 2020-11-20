@@ -1,0 +1,44 @@
+<div>
+  <div class="heading">
+    <div class="heading_flag"></div>
+
+    <button class="heading_name" (click)="switchDirection('name')" >
+      <div>Name</div>
+      <mat-icon color="accent" *ngIf="sortField == 'name' && sortDirection =='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon color="accent" *ngIf="sortField == 'name' && sortDirection =='desc'">keyboard_arrow_down</mat-icon>
+    </button>
+
+    <button class="heading_population" (click) = "switchDirection('population')" >
+      <div>Population</div>
+      <mat-icon color="accent" *ngIf="sortField == 'population' && sortDirection =='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon color="accent" *ngIf="sortField == 'population' && sortDirection =='desc'">keyboard_arrow_down</mat-icon>
+    </button>
+
+    <button class="heading_area" (click) = "switchDirection('area')" >
+      <div> Area (km<sup style=" font-size: '0.5rem;' ">2</sup>) </div>
+      <mat-icon color="accent" *ngIf="sortField == 'area' && sortDirection =='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon color="accent" *ngIf="sortField == 'area' && sortDirection =='desc'">keyboard_arrow_down</mat-icon>
+    </button>
+
+    <button class="heading_gini" (click) = "switchDirection('gini')" >
+      <div>Gini</div>
+      <mat-icon color="accent" *ngIf="sortField == 'gini' && sortDirection =='asc'">keyboard_arrow_up</mat-icon>
+      <mat-icon color="accent" *ngIf="sortField == 'gini' && sortDirection =='desc'">keyboard_arrow_down</mat-icon>
+    </button>
+  </div>
+
+  <!-- {orderedCountries.map((country) => (
+    <Link href={`/country/${country.alpha3Code}`} key={country.name}> -->
+      <div [routerLink]="['/country', country.alpha3Code]" class="row" *ngFor="let country of countries" >
+        <div class="flag">
+          <img src={{country.flag}} alt={{country.name}} />
+        </div>
+        <div class="name">{{country.name}}</div>
+
+        <div class="population">{{country.population}}</div>
+
+        <div class="area">{{country.area || 0}}</div>
+
+        <div class="gini">{{country.gini || 0}} %</div>
+      </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="container_left">
+    <div class="overview_panel">
+      <img src="{{country?.flag}}" alt="{{country?.name}}">
+
+      <h1 class="overview_name">{{country?.name}}</h1>
+      <div class="overview_region">{{country?.region}}</div>
+
+      <div class="overview_numbers">
+        <div class="overview_population">
+          <div class="overview_value">
+            {{country?.population}}
+          </div>
+          <div class="overview_label">Population</div>
+        </div>
+
+        <div class="overview_area">
+          <div class="overview_value">{{country?.area}}</div>
+          <div class="overview_label">Area</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container_right">
+    <div class="details_panel">
+      <h4 class="details_panel_heading">Details</h4>
+
+      <div class="details_panel_row">
+        <div class="details_panel_label">Capital</div>
+        <div class="details_panel_value">
+          {{country?.capital}}
+        </div>
+      </div>
+
+      <div class="details_panel_row">
+        <div class="details_panel_label">Languages</div>
+        <div class="details_panel_value">
+        {{displayArray(country?.languages, "name")}}
+        </div>
+      </div>
+
+      <div class="details_panel_row">
+        <div class="details_panel_label">Currencies</div>
+        <div class="details_panel_value">
+          {{displayArray(country?.currencies, "name")}}
+        </div>
+      </div>
+
+      <div class="details_panel_row">
+        <div class="details_panel_label">Native name</div>
+        <div class="details_panel_value">
+          {{country?.nativeName}}
+        </div>
+      </div>
+
+      <div class="details_panel_row">
+        <div class="details_panel_label">Gini</div>
+        <div class="details_panel_value">{{country?.gini}} %</div>
+      </div>
+
+      <div class="details_panel_borders">
+        <div class="details_panel_borders_label">
+          Neighbouring Countries
+        </div>
+
+        <div class="details_panel_borders_container">
+            <div *ngFor = "let border of borders" class="details_panel_borders_country">
+              <img src={{border.flag}} alt={{border.name}}>
+              <div class="details_panel_borders_name">
+                {{border.name}}
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

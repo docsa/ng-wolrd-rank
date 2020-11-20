@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-wold-ranks": {
+    "ng-world-ranks": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-wold-ranks",
+            "outputPath": "dist/ng-world-ranks",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-wold-ranks:build"
+            "browserTarget": "ng-world-ranks:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-wold-ranks:build:production"
+              "browserTarget": "ng-world-ranks:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-wold-ranks:build"
+            "browserTarget": "ng-world-ranks:build"
           }
         },
         "test": {
@@ -110,15 +110,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-wold-ranks:serve"
+            "devServerTarget": "ng-world-ranks:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-wold-ranks:serve:production"
+              "devServerTarget": "ng-world-ranks:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "ng-wold-ranks"
+    }
+  },
+  "defaultProject": "ng-world-ranks",
+  "cli": {
+    "analytics": "22454014-98d4-4765-a91f-67c9df4a70b7"
+  }
 }

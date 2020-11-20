@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('ng-wold-ranks app is running!');
+    expect(page.getTitleText()).toEqual('ng-world-ranks app is running!');
   });
 
   afterEach(async () => {

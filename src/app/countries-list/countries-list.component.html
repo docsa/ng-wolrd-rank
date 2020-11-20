@@ -1,0 +1,5 @@
+<div class="input-container">
+  <div class= "counts">Found {{(filteredCountries)?.length}} {{(filteredCountries)?.length>1 ? "countries" : "country"}}</div>
+  <app-search-input (filter)="filterTable($event)"></app-search-input>
+</div>
+<app-countries-table [countries]="filteredCountries" (sort)="sortTable($event)"></app-countries-table>
